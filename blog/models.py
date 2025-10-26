@@ -15,3 +15,10 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
 
+class Comment(models.Model):
+    Post = models.ForeignKey(
+    User, on_delete=models.CASCADE, related_name="comment")
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+
