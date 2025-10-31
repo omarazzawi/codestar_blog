@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+<!--“I want to use base.html as my layout that's what's mean.”-->
 {% block content %}
 
 <!-- index.html content starts here -->
@@ -20,6 +20,7 @@
                             </div>
                             <a href="#" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
+                                <P class="card-text">{{post.excerpt}}</P>
                             </a>
 
                             <hr />
@@ -29,6 +30,9 @@
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
+                <!--forloop.counter = how many times the loop has run-->
+                <!--forloop.counter = how many times the loop has run-->
+                <!--Used to control layout spacing-->
             </div>
             <div class="row">
                 {% endif %}
@@ -49,4 +53,7 @@
 </div>
 
 <!-- index.html content ends here -->
+{% endblock %}
+{% block copyright %}
+    Copyright 2023 Matt Rudge
 {% endblock %}
